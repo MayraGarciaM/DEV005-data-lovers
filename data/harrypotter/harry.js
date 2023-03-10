@@ -8,7 +8,6 @@ export default {
       "species": "Human",
       "ancestry": null,
       "gender": "Male",
-
       "hair_color": null,
       "eye_color": null,
       "wand": null,

@@ -5,19 +5,45 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harry Potter Data</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/9e76bab082.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav>
-    </nav>
+    <header>
+      <nav>
+        <img src="./img/logo.png" class="logo" alt="logo harry potter">
+        <button class="toggle" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
+        <ul class="Menu Menu_visible">
+          <li class="Nav-menu-item"><button class="Nav-menu-link .Nav-menu-link_active">Home</button></li>
+          <li class="Nav-menu-item">
+            <select class="Nav-menu-link .Nav-menu-link_active" name="sl-characters" id="sl-characters">
+              <option value="all characters" selected>All characters</option>
+              <option value="sort">Sort A to Z</option>
+            </select>
+          </li>
+          <li class="Nav-menu-item"> 
+            <select class="Nav-menu-link .Nav-menu-link_active" name="  " id="sl-house">
+              <option value= "" selected>All</option>
+              <option value="Gryffindor">Gryffindor</option>
+              <option value="Slytherin">Slytherin</option>
+            </select>
+          </li>
+          <!-- <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Patronus</a></li>
+          <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Wands</a></li>
+          <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Books</a></li> -->
+        </ul>
+      </nav>
+    </header> 
     <main>
       <h1>Harry Potter Data</h1>
     </main>
-    <section>
+    <section id="list">
       <p>Characters Names</p>
       <ul id="characters-names">
       </ul>
     </section>
-
+    <div id="loading">
+      <p>Loading.....</p>
+    </div>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>

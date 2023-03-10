@@ -1,63 +1,166 @@
 :root {
-    --bg-color: #3f3f3f43;
+    --bg-color: #8a868643;
     --box-color: #3f3f3f;
-    --text-color: white;
+    --text-color: #ffffff;
+    --hover-color: #a9a9a9;
+    --select-color: #696969;
+    --gradient: rgba(0, 0, 0, 0.7);
 }
-
 body {
     margin: 0%;
-    background-image:url('./img/img-b.jpg');
+    background: linear-gradient(var(--gradient),var(--gradient)), url('./img/img-b.jpg');
     background-repeat:no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    justify-content: center;
+    align-items: center;
+    min-height: fit-content;    
 }
-
 h1 {
     color: var(--text-color);
     text-align: center;
     text-transform:uppercase;
     margin-top: 0%;
     padding: 2%;
-    background-color: var(--bg-color);
 }
 
-ul, #characters-names {
-    color: var(--text-color);
+header {
+    background-color: #3f3f3f8c;
+    /* position: fixed; */
+    width: 100%;
+}
+
+nav {
     display: flex;
-    flex-wrap: wrap;
-    margin: 3% 3% 3% 3%;
+    margin-right: 10%;
+    left: 100%;
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+    align-self: center;
+    margin: 0 0 0 10px;
+}
+
+.Menu {
+    display: flex;
+    /* flex-direction: row-reverse; */
+    margin-top: 0%;
+    list-style: none;
+    justify-content: flex-end;
+    width: 100%;
     align-items: center;
+}
+
+.Nav-menu-item {
+    font-size: 14px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.Nav-menu-link {
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.Nav-menu-link:hover, .Nav-menu-link_active {
+    background-color: var(--hover-color);
+    transition: 0.5s;
+}
+
+#characters-names {
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 3.5em;
+}
+
+.ul-ch {
+    background-color: var(--box-color);
+    color: var(--text-color);
+    margin: 10px;
+    width: 22%;
+    border-radius: 8px;
+    overflow: hidden;
+    border-left-style: double;
+    flex-basis: 250px;
 }
 
 li {
     list-style: none;
-    background-color: var(--box-color);
-    text-align: center;
-    margin: 2% 2% 2% 2%;
-    padding: 2%;
-    width: 8%;
+    margin: 3% 3% 3% 3%;
     height: fit-content;
-    display: block;
+    line-height: 1.5;
+    font-size: 14px;
+    padding: 2px;
 }
 
+select {
+    background-color: var(--select-color);
+}
+
+button {
+    background-color: var(--select-color);
+    border-style: none;
+}
 p {
     font-size: large;
     font-weight: bold;
     color: var(--text-color);
     padding: 1%;
-    margin: 5% 40% 0% 40%;
+    margin: 0% 40% 1% 40%;
     text-align: center;
     background-color: var(--box-color);
 }
 
-#ch0 {
-    background-image: url('./img/gryffondor.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+img{
+    width: 200px;
+    height: 225px;
+    margin-top: 10%;
 }
 
-#ch1 {
-    background-image: url('./img/Ravenclaw.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.toggle {
+    color: var(--text-color);
+    background: none;
+    border: none;
+    font-size: 20px;
+    display: none;
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
+    .Menu {
+        background-color: var(--box-color);
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .Nav-menu-item {
+        font-size: 14px;
+    }
+    .Nav-menu-link:hover, .Nav-menu-link_active {
+        background-color: var(--hover-color);
+        transition: 0.5s;
+    }
+    .toggle {
+        display: block;
+    }
+    .Menu_visible {
+        left: 0;
+        
+    }
 }
