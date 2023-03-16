@@ -1,5 +1,5 @@
 import { apiHarry } from './api/apiHarry.js';
-import { filterData, filterProtagonists } from './data.js';
+import { filterData, filterProtagonists, searchFilter } from './data.js';
 import listCH from './data/harrypotter/CharactersList.js';
 
 
@@ -63,7 +63,7 @@ selectHouse.addEventListener('change', () => {
   subtitle.style.display = 'block';
   subtitle.textContent = `${selectHouse.value}`;
 });
- 
+
 const btnHome = document.querySelector('#btn-home');
 const title = document.querySelector('h1');
 const subtitle = document.querySelector('#subtitle');
@@ -88,7 +88,6 @@ btnHome.addEventListener('click', () => {
   renderProtagonists();
 });
 
-//limpiar evento y agregar funciones
 slSort.addEventListener('change', () => {
   dataFilter = dataList.characters
   if(slSort.value !== "sort-by") {
@@ -105,7 +104,11 @@ function shortList (list){
   });
 }
 
-
+const searchBar = document.querySelector('#search');
+searchBar.addEventListener('keyup', () => {
+  if (searchBar.key === 'Escape') searchBar.value = '';
+  renderList(searchFilter(dataList.characters, searchBar.value.toLowerCase()));
+});
 
 /* const selectHouse = document.getElementById("sl-house");
 selectHouse.addEventListener('change', () => {

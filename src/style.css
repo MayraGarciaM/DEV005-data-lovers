@@ -4,6 +4,7 @@
     --text-color: #ffffff;
     --hover-color: #a9a9a9;
     --select-color: #696969;
+    --search-color: #e7e7e7;
     --gradient: rgba(0, 0, 0, 0.7);
     --shadow-color: #00000080;
     --border-color: #b1b1b178;
@@ -11,7 +12,7 @@
 
 body {
     margin: 0%;
-    background: linear-gradient(var(--gradient),var(--gradient)), url('https://sm.ign.com/t/ign_fr/news/h/harry-pott/harry-potter-hogwarts-mystery-is-confusing-players-about-est_19a6.2560.jpg');
+    background: linear-gradient(var(--gradient),var(--gradient)), url('./img/img-b.jpg');
     background-repeat:no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -104,7 +105,7 @@ li {
     margin: 3% 16% 3% 3%;
     height: fit-content;
     line-height: 1.5;
-    font-size: 14px;
+    font-size:medium;
     font-family: 'Segoe UI';
     padding: 2px;
 }
@@ -129,6 +130,11 @@ p {
     background-color: var(--box-color);
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+#search {
+    background-color: var(--search-color);
+    color: var(--box-color);
 }
 
 img{
