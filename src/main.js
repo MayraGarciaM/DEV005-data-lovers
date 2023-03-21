@@ -1,7 +1,6 @@
 import { apiHarry } from './api/apiHarry.js';
-import { filterData, filterProtagonists, searchFilter } from './data.js';
+import { filterData, filterProtagonists, searchFilter, sortList } from './data.js';
 import listCH from './data/harrypotter/CharactersList.js';
-
 
 const slSort = document.querySelector('#sl-sort');
 const listElement = document.getElementById("list");
@@ -19,7 +18,6 @@ apiHarry().then((listHarry) => {
   dataList = listHarry;
   dataFilter = listHarry.characters;
   renderProtagonists();
-  //renderList(listHarry.characters)
 });
 
 function renderList(listHarry) {
@@ -56,7 +54,7 @@ selectHouse.addEventListener('change', () => {
   if(selectHouse.value !== "All Characters")  dataFilter = filterData(dataFilter, selectHouse.value);
   else dataFilter = dataList.characters;
   if(slSort.value !== "sort-by") {
-    dataFilter = shortList(dataFilter)
+    dataFilter = sortList(dataFilter)
   }
   renderList(dataFilter);
   title.style.display='none';
@@ -77,11 +75,12 @@ const protagonists = [
 ];
 
 const renderProtagonists = () => {
-  dataFilter = filterProtagonists(dataFilter, protagonists);
-  title.style.display='block';
-  selectHouse.value='Filter by';
-  subtitle.style.display='none';
-  renderList(shortList(dataFilter));
+  dataFilter = filterProtagonists(dataList.characters, protagonists);
+  title.style.display = 'block';
+  selectHouse.value = 'Filter by';
+  slSort.value = 'sort-by';
+  subtitle.style.display = 'none';
+  renderList(dataFilter);
 };
 
 btnHome.addEventListener('click', () => {
@@ -91,30 +90,18 @@ btnHome.addEventListener('click', () => {
 slSort.addEventListener('change', () => {
   dataFilter = dataList.characters
   if(slSort.value !== "sort-by") {
-    renderList(shortList(shortList(dataFilter)));
+    title.style.display = 'none';
+    selectHouse.value='All Characters';
+    renderList(sortList(dataFilter));
+  }else {
+    selectHouse.value='Filter by';
+    renderProtagonists();
   }
 });
-function shortList (list){
-  return list.concat().sort((a, b) => {
-    const nameA = a.name.toUpperCase();
-    const nameB = b.name.toUpperCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
-    return 0;
-  });
-}
 
 const searchBar = document.querySelector('#search');
 searchBar.addEventListener('keyup', () => {
-  if (searchBar.key === 'Escape') searchBar.value = '';
+  title.style.display = 'none';
   renderList(searchFilter(dataList.characters, searchBar.value.toLowerCase()));
+  if (searchBar.value === '') renderProtagonists();
 });
-
-/* const selectHouse = document.getElementById("sl-house");
-selectHouse.addEventListener('change', () => {
-  let dataFilter;
-  if(selectHouse.value !== "")  dataFilter = dataList.characters.filter((item) => item.house === selectHouse.value)
-  else dataFilter = dataList.characters
-  
-  renderList(dataFilter)
-}) */
