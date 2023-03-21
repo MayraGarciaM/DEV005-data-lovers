@@ -1,24 +1,24 @@
 import { filterData, filterProtagonists, sortList, searchFilter } from '../src/data.js';
+const data = [
+  {
+    name: "Harry Potter",
+    house: "Gryffindor"
+  },
+  {
+    name: "Draco Malfoy",
+    house: "Slytherin"
+  },
+  {
+    name: "Hermione Granger",
+    house: "Gryffindor"
+  },
+  {
+    name: "Severus Snape",
+    house: "Slytherin"
+  }
+];
 
 describe("filterData", () => {
-  const data = [
-    {
-      name: "Harry Potter",
-      house: "Gryffindor",
-    },
-    {
-      name: "Draco Malfoy",
-      house: "Slytherin",
-    },
-    {
-      name: "Hermione Granger",
-      house: "Gryffindor",
-    },
-    {
-      name: "Severus Snape",
-      house: "Slytherin",
-    },
-  ];
   const result = [
     {
       name: "Harry Potter",
@@ -40,26 +40,14 @@ describe("filterData", () => {
 
 describe("filterProtagonists", () => {
   const protagonists = ['Harry Potter', 'Ronald Weasley', 'Hermione Granger'];
-  const data = [
-    {
-      name: "Harry Potter"
-    },
-    {
-      name: "Draco Malfoy"
-    },
-    {
-      name: "Hermione Granger"
-    },
-    {
-      name: "Severus Snape"
-    }
-  ];
   const result = [
     {
-      name: "Harry Potter"
+      name: "Harry Potter",
+      house: "Gryffindor"
     },
     {
-      name: "Hermione Granger"
+      name: "Hermione Granger",
+      house: "Gryffindor"
     }
   ];
   it("is a function", () => {
@@ -72,32 +60,49 @@ describe("filterProtagonists", () => {
 });
 
 describe("sortList", () => {
-  const data = [
+  const data2 = [
     {
-      name: "Harry Potter"
+      name: "Harry Potter",
+      house: "Gryffindor"
     },
     {
-      name: "Draco Malfoy"
+      name: "Harry Potter",
+      house: "Gryffindor"
     },
     {
-      name: "Severus Snape"
+      name: "Draco Malfoy",
+      house: "Slytherin"
     },
     {
-      name: "Hermione Granger"
+      name: "Hermione Granger",
+      house: "Gryffindor"
+    },
+    {
+      name: "Severus Snape",
+      house: "Slytherin"
     }
-  ];
+  ]
+
   const result = [
     {
-      name: "Draco Malfoy"
+      name: "Draco Malfoy",
+      house: "Slytherin"
     },
     {
-      name: "Harry Potter"
+      name: "Harry Potter",
+      house: "Gryffindor"
     },
     {
-      name: "Hermione Granger"
+      name: "Harry Potter",
+      house: "Gryffindor"
     },
     {
-      name: "Severus Snape"
+      name: "Hermione Granger",
+      house: "Gryffindor"
+    },
+    {
+      name: "Severus Snape",
+      house: "Slytherin"
     }
   ];
   it("is a function", () => {
@@ -105,29 +110,17 @@ describe("sortList", () => {
   });
 
   it("returns `Ordena la lista de personajes de forma ascendente`", () => {
-    expect(sortList(data)).toEqual(result);
+    expect(sortList(data2)).toEqual(result);
   });
+
 });
 
 describe("searchFilter", () => {
   const input = "Harry";
-  const data = [
-    {
-      name: "Harry Potter"
-    },
-    {
-      name: "Draco Malfoy"
-    },
-    {
-      name: "Severus Snape"
-    },
-    {
-      name: "Hermione Granger"
-    }
-  ];
   const result = [
     {
-      name: "Harry Potter"
+      name: "Harry Potter",
+      house: "Gryffindor"
     }
   ];
   it("is a function", () => {
