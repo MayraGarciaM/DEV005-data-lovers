@@ -1,5 +1,6 @@
 
 export const apiHarry = async () => {
-  const response = await fetch("../data/harrypotter/harry.json");
+  const response = await fetch("");
   return response.json()
 }
+//data/harrypotter/harry.json

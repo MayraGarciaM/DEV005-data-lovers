@@ -1,4 +1,4 @@
-import { filterData, filterProtagonists, sortList, searchFilter } from '../src/data.js';
+import { filterData, filterProtagonists, sortList, searchFilter, calculate } from '../src/data.js';
 const data = [
   {
     name: "Harry Potter",
@@ -129,5 +129,22 @@ describe("searchFilter", () => {
 
   it("returns `Retorna el personaje que coincide con la busqueda`", () => {
     expect(searchFilter(data, input.toLowerCase())).toEqual(result);
+  });
+});
+
+describe("calculate", () => {
+
+  it("is a function", () => {
+    expect(typeof calculate).toBe("function");
+  });
+
+  it("Deberia retornar 120 para 60", () => {
+    expect(calculate(60)).toEqual('120');
+  });
+  it("Deberia retornar 40 para 20", () => {
+    expect(calculate(20)).toEqual('40');
+  });
+  it("Deberia retornar 16 para 8", () => {
+    expect(calculate(8)).toEqual('16');
   });
 });

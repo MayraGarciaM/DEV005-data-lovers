@@ -130,11 +130,12 @@ p {
     font-weight: bold;
     color: var(--text-color);
     padding: 1%;
-    margin: 0% 40% 1% 40%;
+    margin: 0 auto;
     text-align: center;
     background-color: var(--box-color);
     margin-top: 2%;
     margin-bottom: 2%;
+    width: 30%;
 }
 
 #search {

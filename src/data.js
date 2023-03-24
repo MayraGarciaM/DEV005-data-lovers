@@ -22,3 +22,8 @@ export const searchFilter = (dataList, condition) => {
   const dataFilter = dataList.filter( item => item.name.toLowerCase().includes(condition));
   return dataFilter;
 };
+
+export const calculate = (number) => {
+  const percentage = (number/50) * 100;
+  return percentage.toFixed()
+};
