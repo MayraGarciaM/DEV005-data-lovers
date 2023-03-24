@@ -1,43 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="website for harry potter fans who want to know more information about the characters">
     <title>Harry Potter Data</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com">
     <script src="https://kit.fontawesome.com/9e76bab082.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
-        <img src="./img/logo.png" class="logo" alt="logo harry potter">
+        <img src="./img/logo2.png" class="logo" alt="logo harry potter">
+        <img src="./img/logo.png" class="logo" id="logoMovil" alt="logo harry potter">
         <button class="toggle" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
         <ul class="Menu Menu_visible">
-          <li class="Nav-menu-item"><button class="Nav-menu-link .Nav-menu-link_active">Home</button></li>
           <li class="Nav-menu-item">
-            <select class="Nav-menu-link .Nav-menu-link_active" name="sl-characters" id="sl-characters">
-              <option value="all characters" selected>All characters</option>
-              <option value="sort">Sort A to Z</option>
+            <button id="btn-home" class="Nav-menu-link .Nav-menu-link_active">Protagonists</button>
+          </li>
+          <li class="Nav-menu-item">
+            <select class="Nav-menu-link .Nav-menu-link_active" name="sl-characters" id="sl-sort">
+              <option value="sort-by" selected>Sort by</option>
+              <option value="sort-a-to-z">Sort A to Z</option>
             </select>
           </li>
           <li class="Nav-menu-item"> 
-            <select class="Nav-menu-link .Nav-menu-link_active" name="  " id="sl-house">
-              <option value= "" selected>All</option>
+            <select class="Nav-menu-link .Nav-menu-link_active" name="sl-house" id="sl-house">
+              <option id="opt-filter-by" value="Filter by" disabled selected>Filter By</option>
+              <option value="All Characters">All Characters</option>
               <option value="Gryffindor">Gryffindor</option>
               <option value="Slytherin">Slytherin</option>
+              <option value="Hufflepuff">Hufflepuff</option>
+              <option value="Ravenclaw">Ravenclaw</option>
             </select>
           </li>
-          <!-- <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Patronus</a></li>
-          <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Wands</a></li>
-          <li class="Nav-menu-item"><a href="#" class="Nav-menu-link .Nav-menu-link_active">Books</a></li> -->
+          <li class="Nav-menu-item">
+            <input type="search" name="Search" id="search" class="Nav-menu-link .Nav-menu-link_active" placeholder="Search character...">
+          </li>
         </ul>
       </nav>
     </header> 
     <main>
-      <h1>Harry Potter Data</h1>
+      <h1>Main characters</h1>
+      <p id="p-calculate"></p>
     </main>
     <section id="list">
-      <p>Characters Names</p>
+      <p id="subtitle">All Characters</p>
       <ul id="characters-names">
       </ul>
     </section>

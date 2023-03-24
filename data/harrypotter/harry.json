@@ -5745,8 +5745,8 @@
       "eye_color": "Grey",
       "wand": "10\", Hawthorn, unicorn hair (formerly)",
       "patronus": "None",
-      "house": "Malfoy family",
-      "associated_groups": [],
+      "house": "Slytherin",
+      "associated_groups": ["Malfoy family"],
       "books_featured_in": [
         1,
         2,
@@ -5769,7 +5769,7 @@
       "eye_color": "Grey",
       "wand": "Elm and dragon heartstring (formerly)",
       "patronus": "None",
-      "house": "Malfoy family",
+      "house": "Slytherin",
       "associated_groups": [],
       "books_featured_in": [
         1,
@@ -6133,7 +6133,7 @@
       "eye_color": "One dark, one electric blue",
       "wand": "Unknown length, wood and core",
       "patronus": "Non-corporeal",
-      "house": "Unknown",
+      "house": null,
       "associated_groups": [
         "Order of the Phoenix",
         "Advance Guard",
@@ -12541,7 +12541,7 @@
       "eye_color": null,
       "wand": "12¾\", Walnut, dragon heartstring",
       "patronus": "None",
-      "house": "House of Black",
+      "house": "Slytherin",
       "associated_groups": [],
       "books_featured_in": [
         4,
@@ -12812,7 +12812,7 @@
       "eye_color": "Blue",
       "wand": "Unknown 1st wand",
       "patronus": null,
-      "house": "House of Black",
+      "house": "Slytherin",
       "associated_groups": [],
       "books_featured_in": [
         1,

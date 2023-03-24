@@ -1,11 +1,15 @@
 :root {
-    --bg-color: #8a868643;
+    --bg-color: #3f3f3f8c;
     --box-color: #3f3f3f;
     --text-color: #ffffff;
     --hover-color: #a9a9a9;
     --select-color: #696969;
+    --search-color: #e7e7e7;
     --gradient: rgba(0, 0, 0, 0.7);
+    --shadow-color: #00000080;
+    --border-color: #b1b1b178;
 }
+
 body {
     margin: 0%;
     background: linear-gradient(var(--gradient),var(--gradient)), url('./img/img-b.jpg');
@@ -16,17 +20,18 @@ body {
     align-items: center;
     min-height: fit-content;    
 }
+
 h1 {
     color: var(--text-color);
     text-align: center;
     text-transform:uppercase;
-    margin-top: 0%;
-    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    display: none;
 }
 
 header {
-    background-color: #3f3f3f8c;
-    /* position: fixed; */
+    background-color: var(--bg-color);
     width: 100%;
 }
 
@@ -37,15 +42,19 @@ nav {
 }
 
 .logo {
-    width: 150px;
+    width: 220;
     height: 100px;
     align-self: center;
     margin: 0 0 0 10px;
+    border-style: none;
+}
+
+#logoMovil {
+    display: none;
 }
 
 .Menu {
     display: flex;
-    /* flex-direction: row-reverse; */
     margin-top: 0%;
     list-style: none;
     justify-content: flex-end;
@@ -57,6 +66,7 @@ nav {
     font-size: 14px;
     text-transform: uppercase;
     width: max-content;
+    margin: 3% 3% 3% 3%;
 }
 
 .Nav-menu-link {
@@ -73,6 +83,8 @@ nav {
 
 #characters-names {
     margin: 0%;
+    margin-top: 3%;
+    margin-bottom: 5%;
     padding: 0%;
     display: flex;
     flex-flow: wrap;
@@ -84,21 +96,25 @@ nav {
     background-color: var(--box-color);
     color: var(--text-color);
     margin: 10px;
-    width: 22%;
+    padding-bottom: 3%;
+    /* width: 22%; */
     border-radius: 8px;
     overflow: hidden;
     border-left-style: double;
     flex-basis: 250px;
+    box-shadow: 10px 10px 15px var(--shadow-color);
 }
 
 li {
     list-style: none;
-    margin: 3% 3% 3% 3%;
+    margin: 3% 16% 3% 3%;
     height: fit-content;
     line-height: 1.5;
-    font-size: 14px;
+    font-size:medium;
+    font-family: 'Segoe UI';
     padding: 2px;
 }
+
 
 select {
     background-color: var(--select-color);
@@ -108,20 +124,33 @@ button {
     background-color: var(--select-color);
     border-style: none;
 }
+
 p {
     font-size: large;
     font-weight: bold;
     color: var(--text-color);
     padding: 1%;
-    margin: 0% 40% 1% 40%;
+    margin: 0 auto;
     text-align: center;
     background-color: var(--box-color);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 30%;
+}
+
+#search {
+    background-color: var(--search-color);
+    color: var(--box-color);
 }
 
 img{
     width: 200px;
     height: 225px;
     margin-top: 10%;
+    margin-bottom: 5%;
+    border-style: inset;
+    border-radius: 5%;
+    border-color: var(--border-color);
 }
 
 .toggle {
@@ -131,11 +160,20 @@ img{
     font-size: 20px;
     display: none;
 }
+
+#opt-filter-by {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .logo {
-        width: 50px;
-        height: 50px;
+        display: none;
+        width: 70px;
+        height: 70px;
         margin-left: 10px;
+    }
+    #logoMovil {
+        display: block;
     }
     .Menu {
         background-color: var(--box-color);
