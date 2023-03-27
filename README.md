@@ -50,3 +50,12 @@ Se agregaron tests a las funciones del archivo data.js las cuales fueron:
   * Filtrar por busqueda.
   * Calcular porcentaje total de personajes por cada casa.
 ![tests-corriendo](./readme_img/runTestspng.png)
+
+Problemas al ejecutar tests:
+ - Detecto problemas de identación.
+ - En la función calculate: esperaba recibir un string y recibia un numero entero.
+
+Feedbacks:
+ - Nos sugirieron cambiar el titulo.
+ - El tamaño de la letra era muy pequeño
+ - Se veía muy obscuro
